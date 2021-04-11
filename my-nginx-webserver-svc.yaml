@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-nginx-webserver-service
+  labels:
+    run: my-nginx-webserver-service
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    protocal: TCP
+    targetPort: 80
+  selector:
+    app: nginx
